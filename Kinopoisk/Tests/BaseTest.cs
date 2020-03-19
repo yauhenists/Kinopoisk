@@ -10,8 +10,8 @@ namespace Kinopoisk.Tests
     {
         protected static readonly string DownloadPath = 
             Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent?.FullName + @"\Download";
-        protected IWebDriver Driver { get; }
-        protected ConciseApi ConciseApi { get; }
+        public IWebDriver Driver { get; }
+        public ConciseApi ConciseApi { get; }
 
         public BaseTest()
         {

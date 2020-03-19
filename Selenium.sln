@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinopoisk", "Kinopoisk\Kinopoisk.csproj", "{1551821A-A2F3-47D5-8447-6C28C2CB956C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecflowKinopoisk", "SpecflowKinopoisk\SpecflowKinopoisk.csproj", "{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,27 @@ Global
 		{1551821A-A2F3-47D5-8447-6C28C2CB956C}.Release|x64.Build.0 = Release|Any CPU
 		{1551821A-A2F3-47D5-8447-6C28C2CB956C}.Release|x86.ActiveCfg = Release|Any CPU
 		{1551821A-A2F3-47D5-8447-6C28C2CB956C}.Release|x86.Build.0 = Release|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Debug|ARM.Build.0 = Debug|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Debug|x64.Build.0 = Debug|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Debug|x86.Build.0 = Debug|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Release|ARM.ActiveCfg = Release|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Release|ARM.Build.0 = Release|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Release|x64.ActiveCfg = Release|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Release|x64.Build.0 = Release|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Release|x86.ActiveCfg = Release|Any CPU
+		{D3DB03E8-19C5-49F7-B76D-DC277FF1A5CC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E02D0B84-11AE-480A-944C-27C799E9289A}
 	EndGlobalSection
 EndGlobal

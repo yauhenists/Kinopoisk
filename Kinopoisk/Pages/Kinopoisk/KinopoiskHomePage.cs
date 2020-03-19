@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using NUnit.Framework.Constraints;
+using OpenQA.Selenium;
 
 namespace Kinopoisk.Pages.Kinopoisk
 {
@@ -39,7 +41,12 @@ namespace Kinopoisk.Pages.Kinopoisk
 
         public KinopoiskHomePage Logout()
         {
+            //Thread.Sleep(10000);
             ConciseApi.MoveCursorToElement(_loginAvatarButton);
+            if (!ConciseApi.GetElement(_logoutButton).Enabled && !ConciseApi.GetElement(_logoutButton).Displayed)
+            {
+                ConciseApi.MoveCursorToElement(_loginAvatarButton);
+            }
             ConciseApi.ClickOnElementJs(_logoutButton);
 
             return this;
