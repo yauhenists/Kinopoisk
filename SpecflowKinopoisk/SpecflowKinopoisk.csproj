@@ -166,11 +166,14 @@
   <ItemGroup>
     <Compile Include="Hooks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\AdvancedSearchStep.cs" />
     <Compile Include="Steps\LoginAndLogoutSteps.cs" />
+    <Compile Include="Steps\SearchSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Features\LoginAndLogout.feature" />
+    <None Include="Features\Search.feature" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

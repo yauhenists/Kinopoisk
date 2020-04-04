@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AventStack.ExtentReports;
-using AventStack.ExtentReports.Gherkin.Model;
-using AventStack.ExtentReports.Reporter;
-using BoDi;
 using Kinopoisk;
 using Kinopoisk.Pages.Kinopoisk;
-using Kinopoisk.Tests;
 using NUnit.Framework;
 using SeleniumExtras.WaitHelpers;
 using TechTalk.SpecFlow;
@@ -18,37 +9,24 @@ using TechTalk.SpecFlow.Assist;
 namespace SpecflowKinopoisk.Steps
 {
     [Binding]
-    public class LoginAndLogoutSteps : TechTalk.SpecFlow.Steps
+    public class LoginAndLogoutSteps
     {
-        //public static KinopoiskTests Tests = new KinopoiskTests();
-        //public ConciseApi ConciseApi { get; set; } = Tests.ConciseApi;
-
-        private Hooks _hooks;// = new Hooks();
+        private readonly ConciseApi _conciseApi;
+        private readonly ScenarioContext _scenarioContext;
         private KinopoiskHomePage _homePage;
         private RegistrationPage _registrationPage;
 
-        public LoginAndLogoutSteps()
+        public LoginAndLogoutSteps(ConciseApi conciseApi, ScenarioContext scenarioContext)
         {
-            _hooks = new Hooks();
+            _conciseApi = conciseApi;
+            _scenarioContext = scenarioContext;
         }
 
         [Given(@"I have opened home kinopoisk page")]
         public void GivenIHaveOpenedHomeKinopoiskPage()
         {
-            //Tests.SetUp();
-           
-
-            //var htmlReporter = new ExtentHtmlReporter(@"G:\Automation\Lab2019\KinopoiskForSpecFlow\Kinopoisk\SpecflowKinopoisk\ExtentReport.html");
-            //htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
-
-            //var _extent = new ExtentReports();
-            //_extent.AttachReporter(htmlReporter);
-
-            //var _featureName = _extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
-
-            //_extent.Flush();
-
-            _homePage = new KinopoiskHomePage(_hooks.ConciseApi);
+            _homePage = new KinopoiskHomePage(_conciseApi);
+            _scenarioContext.Add(typeof(KinopoiskHomePage).ToString(), _homePage);
         }
 
         [Given(@"I click login button to go to registration page")]
@@ -66,19 +44,6 @@ namespace SpecflowKinopoisk.Steps
             _registrationPage.LoginWithCredentials<RegistrationPage>(login, password);
         }
 
-        /*[When(@"I login with valid credentials")]
-        public void WhenILoginWithValidCredentials()
-        {
-            string[] colHeaders = {"Login", "Password"};
-            string[] row = {"test.selenium2002", "selenium123"};
-
-            var table = new Table(colHeaders);
-            table.AddRow(row);
-
-            Given("I login with credentials", table);
-        }*/
-
-
         [Then(@"I should see invalid password message")]
         public void ThenIShouldSeeInvalidPasswordMessage()
         {
@@ -86,8 +51,6 @@ namespace SpecflowKinopoisk.Steps
                 _registrationPage.GetInvalidPasswordMessage());
 
             Console.WriteLine("Assert step is passed");
-
-            //Tests.TearDown();
         }
 
         [Then(@"I should see avatar button on reloaded home page")]
@@ -95,11 +58,9 @@ namespace SpecflowKinopoisk.Steps
         {
             Assert.Multiple(() =>
             {
-                Assert.IsTrue(_hooks.ConciseApi.AssertThat(ExpectedConditions.TitleIs(_homePage.Title)));
+                Assert.IsTrue(_conciseApi.AssertThat(ExpectedConditions.TitleIs(_homePage.Title)));
                 Assert.IsTrue(_homePage.IsLoginAvatarButtonDisplayed());
             });
-
-            //Tests.TearDown();
         }
 
         [When(@"I click logout")]
@@ -112,11 +73,6 @@ namespace SpecflowKinopoisk.Steps
         public void ThenIShouldSeeLoginButton()
         {
             Assert.AreEqual("Войти", _homePage.GetLoginButtonText());
-
-            //Tests.TearDown();
         }
-
-
-
     }
 }

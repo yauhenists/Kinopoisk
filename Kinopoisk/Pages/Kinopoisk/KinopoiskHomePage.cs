@@ -1,6 +1,4 @@
-﻿using System.Threading;
-using NUnit.Framework.Constraints;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Kinopoisk.Pages.Kinopoisk
 {
@@ -11,7 +9,7 @@ namespace Kinopoisk.Pages.Kinopoisk
         private readonly By _loginAvatarButton = By.XPath("//div[contains(@class, 'button')]/div[contains(@class, 'avatar')]");
         private readonly By _loginToProfileButton = By.XPath("//li/div/a[contains(@href,'/user/')]");
         private readonly By _logoutButton = By.XPath("//div[contains(text(),'Выйти')]");
-        private readonly By _searchField = By.XPath("//input[@placeholder='Фильмы, персоны, кинотеатры']");
+        private readonly By _searchField = By.XPath("//input[@placeholder='Фильмы, сериалы, персоны']");
         private readonly By _advancedSearchButton = By.XPath("//a[@aria-label='advanced-search']");
         public string Title { get; } = "КиноПоиск. Все фильмы планеты.";
         public KinopoiskHomePage(ConciseApi conciseApi) : base(conciseApi)

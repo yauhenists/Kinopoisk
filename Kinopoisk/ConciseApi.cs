@@ -5,13 +5,16 @@ using System.Text;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using TechTalk.SpecFlow;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace Kinopoisk
 {
+
+    [Binding]
     public class ConciseApi
     {
-        private IWebDriver Driver { get; }
+        public IWebDriver Driver { get; }
 
         public ConciseApi(IWebDriver driver)
         {

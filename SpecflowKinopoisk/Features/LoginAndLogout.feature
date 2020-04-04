@@ -1,7 +1,6 @@
 ﻿Feature: LoginAndLogout
 	Check login and logout functionality
 
-@mytag
 Scenario: Login with invalid credentials
 	Given I have opened home kinopoisk page
 	And I click login button to go to registration page

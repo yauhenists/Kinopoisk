@@ -15,6 +15,11 @@ namespace Kinopoisk.Pages.Kinopoisk
             throw new System.NotImplementedException();
         }
 
+        public PageWithResults SearchByNameAndCountry(string name)
+        {
+            return this.SearchByNameAndCountry(name, "США");
+        }
+
         public PageWithResults SearchByNameAndCountry(string name, string country)
         {
             ConciseApi.InputText(name, SearchField);
